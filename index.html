@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="./favicon.ico" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="keywords" content="base64, encoder, decoder">
+		<meta property="og:url" content="https:&#x2F;&#x2F;b64.tinyops.ru" />
+		<meta property="og:title" content="Base64 - онлайн кодировщик / декодировщик" />
+		<meta property="og:description" content="Кодируем и декодируем Base64"/>
+		<meta property="og:type" content="blog"/>
+		<link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
+		<meta name="msapplication-TileColor" content="#da532c">
+		<meta name="theme-color" content="#ffffff">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap"
+					rel="stylesheet">
+		<style>
+				* {
+            font-family: 'JetBrains Mono', monospace;
+				}
+
+				body {
+						margin-left: 3%;
+						margin-top: 3%;
+
+            font-size: 1rem;
+
+            background-color: #ffffff;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23cfcfcf' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+				}
+
+				h1 {
+						font-size: 1.3rem;
+
+						margin-top: 0;
+						margin-bottom: 20px;
+				}
+
+				button {
+						padding: 10px;
+
+						font-weight: bold;
+
+            font-size: 1rem;
+
+						color: white;
+            background-color: #1f1f1f;
+
+						border-radius: 5px;
+
+						border: 0 solid transparent;
+				}
+
+        button:hover {
+            padding: 10px;
+
+						color: black;
+
+						background-color: #41ff41;
+
+						cursor: pointer;
+        }
+
+        button:disabled {
+            padding: 10px;
+
+            background-color: lightgray;
+            color: #818181;
+        }
+
+				.clipboard-btn {
+						background-color: #565656;
+				}
+
+				textarea {
+						border-radius: 5px;
+
+            border: 2px solid #a9a9a9;
+
+            font-size: 1rem;
+
+						width: 880px;
+
+						margin-bottom: 10px;
+
+						padding-top: 15px;
+						padding-left: 15px;
+				}
+
+				textarea::placeholder {
+						color: gray;
+				}
+
+        textarea:focus {
+            border-radius: 5px;
+
+            border: 2px solid darkblue;
+        }
+
+				p, h1 {
+						padding: 0;
+				}
+
+				.content {
+						background-color: white;
+
+						padding: 30px;
+						padding-right: 40px;
+
+						border-radius: 5px;
+
+						border: 2px solid #eeeeee;
+
+						width: 900px;
+				}
+
+				.message {
+						font-size: 1rem;
+
+						color: black;
+
+						text-align: center;
+
+						margin-bottom: 20px;
+				}
+
+        .message-info {
+            color: black;
+        }
+
+        .message-error {
+            color: red;
+        }
+		</style>
+		
+		<link href="./_app/immutable/assets/2.LYNnUPn1.css" rel="stylesheet">
+		<link rel="modulepreload" href="./_app/immutable/entry/start.bGw3cEro.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/entry.bKE828xI.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/scheduler.KxqwLHdT.js">
+		<link rel="modulepreload" href="./_app/immutable/entry/app.JpDHzqBe.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/index.9kHap2oE.js">
+		<link rel="modulepreload" href="./_app/immutable/nodes/0.TmRHN_Uw.js">
+		<link rel="modulepreload" href="./_app/immutable/nodes/2.YoKcbeTe.js"><title>Base64 encoder / decoder</title><!-- HEAD_svelte-yp23y_START --><!-- HEAD_svelte-yp23y_END -->
+	</head>
+	<body data-sveltekit-preload-data="hover">
+		<div style="display: contents">    <div class="content"><h1 data-svelte-h="svelte-1roeudu"><span style="color: lightgray">::</span> BASE64 <span style="color: lightgray">//</span> Encoder / Decoder</h1> <div class="margin-bottom: 35px"><textarea rows="5" autofocus="autofocus" class="text" placeholder="Вставьте закодированный текст или текст для кодирования."></textarea></div> <div style="text-align: right"> <div style="text-align: right"><button class="clipboard-btn" title="Копировать в буфер обмена" style="margin-right: 30px" disabled><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16"><path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1z"></path><path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0z"></path></svg> Копировать</button> <textarea class="svelte-w8w2mp"></textarea> <button disabled>Кодировать</button> <button disabled>Декодировать</button></div></div></div> 
+			
+			<script>
+				{
+					__sveltekit_xxv3o5 = {
+						base: new URL(".", location).pathname.slice(0, -1)
+					};
+
+					const element = document.currentScript.parentElement;
+
+					const data = [null,null];
+
+					Promise.all([
+						import("./_app/immutable/entry/start.bGw3cEro.js"),
+						import("./_app/immutable/entry/app.JpDHzqBe.js")
+					]).then(([kit, app]) => {
+						kit.start(app, element, {
+							node_ids: [0, 2],
+							data,
+							form: null,
+							error: null
+						});
+					});
+				}
+			</script>
+		</div>
+	</body>
+</html>
