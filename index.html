@@ -17,130 +17,45 @@
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap"
 					rel="stylesheet">
-		<style>
-				* {
-            font-family: 'JetBrains Mono', monospace;
-				}
-
-				body {
-						margin-left: 3%;
-						margin-top: 3%;
-
-            font-size: 1rem;
-
-            background-color: #ffffff;
-            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23cfcfcf' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-				}
-
-				h1 {
-						font-size: 1.3rem;
-
-						margin-top: 0;
-						margin-bottom: 20px;
-				}
-
-				button {
-						padding: 10px;
-
-						font-weight: bold;
-
-            font-size: 1rem;
-
-						color: white;
-            background-color: #1f1f1f;
-
-						border-radius: 5px;
-
-						border: 0 solid transparent;
-				}
-
-        button:hover {
-            padding: 10px;
-
-						color: black;
-
-						background-color: #41ff41;
-
-						cursor: pointer;
-        }
-
-        button:disabled {
-            padding: 10px;
-
-            background-color: lightgray;
-            color: #818181;
-        }
-
-				.clipboard-btn {
-						background-color: #565656;
-				}
-
-				textarea {
-						border-radius: 5px;
-
-            border: 2px solid #a9a9a9;
-
-            font-size: 1rem;
-
-						width: 880px;
-
-						margin-bottom: 10px;
-
-						padding-top: 15px;
-						padding-left: 15px;
-				}
-
-				textarea::placeholder {
-						color: gray;
-				}
-
-        textarea:focus {
-            border-radius: 5px;
-
-            border: 2px solid darkblue;
-        }
-
-				p, h1 {
-						padding: 0;
-				}
-
-				.content {
-						background-color: white;
-
-						padding: 30px;
-						padding-right: 40px;
-
-						border-radius: 5px;
-
-						border: 2px solid #eeeeee;
-
-						width: 900px;
-				}
-
-				.message {
-						font-size: 1rem;
-
-						color: black;
-
-						text-align: center;
-
-						margin-bottom: 20px;
-				}
-
-        .message-info {
-            color: black;
-        }
-
-        .message-error {
-            color: red;
-        }
-		</style>
 		
-		<link rel="modulepreload" href="./_app/immutable/entry/start.G4chMpae.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/entry.3BmKrOYZ.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/scheduler.KxqwLHdT.js">
-		<link rel="modulepreload" href="./_app/immutable/entry/app.E55aphjY.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/index.9kHap2oE.js">
+		<link href="./_app/immutable/assets/0.Ngf2E18k.css" rel="stylesheet">
+		<link rel="modulepreload" href="./_app/immutable/entry/start.4zbJ2YcV.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/entry.MQ8h-Lx5.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/scheduler.GPr2abLr.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/index.aWJ_Dz7C.js">
+		<link rel="modulepreload" href="./_app/immutable/entry/app.oXq-woWP.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/index.8Ks7jVSj.js">
+		<link rel="modulepreload" href="./_app/immutable/nodes/0.ZREz96PN.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/mode.M6nN_nzH.js">
+		<link rel="modulepreload" href="./_app/immutable/nodes/2.RSRbTjNa.js"><title>Base64 encoder / decoder</title><!-- HEAD_svelte-1nen96w_START --> <!-- HTML_TAG_START --><script>(function setInitialMode({ defaultMode, themeColors: themeColors2, darkClassNames: darkClassNames2 = ["dark"], lightClassNames: lightClassNames2 = [], defaultTheme = "" }) {
+  const rootEl = document.documentElement;
+  const mode = localStorage.getItem("mode-watcher-mode") || defaultMode;
+  const theme = localStorage.getItem("mode-watcher-theme") || defaultTheme;
+  const light = mode === "light" || mode === "system" && window.matchMedia("(prefers-color-scheme: light)").matches;
+  if (light) {
+    if (darkClassNames2.length)
+      rootEl.classList.remove(...darkClassNames2);
+    if (lightClassNames2.length)
+      rootEl.classList.add(...lightClassNames2);
+  } else {
+    if (lightClassNames2.length)
+      rootEl.classList.remove(...lightClassNames2);
+    if (darkClassNames2.length)
+      rootEl.classList.add(...darkClassNames2);
+  }
+  rootEl.style.colorScheme = light ? "light" : "dark";
+  if (themeColors2) {
+    const themeMetaEl = document.querySelector('meta[name="theme-color"]');
+    if (themeMetaEl) {
+      themeMetaEl.setAttribute("content", mode === "light" ? themeColors2.light : themeColors2.dark);
+    }
+  }
+  if (theme) {
+    rootEl.setAttribute("data-theme", theme);
+    localStorage.setItem("mode-watcher-theme", theme);
+  }
+  localStorage.setItem("mode-watcher-mode", mode);
+})({"defaultMode":"system","darkClassNames":["dark"],"lightClassNames":[],"defaultTheme":"","modeStorageKey":"mode-watcher-mode","themeStorageKey":"mode-watcher-theme"});</script><!-- HTML_TAG_END --><!-- HEAD_svelte-1nen96w_END --><!-- HEAD_svelte-yp23y_START --><!-- HEAD_svelte-yp23y_END -->
 	</head>
 	<body data-sveltekit-preload-data="hover">
 	<!-- Yandex.Metrika counter -->
@@ -159,20 +74,29 @@
 	</script>
 	<noscript><div><img src="https://mc.yandex.ru/watch/96362753" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 	<!-- /Yandex.Metrika counter -->
-		<div style="display: contents">
+		<div style="display: contents">    <div class="container bg-background ps-7 pt-4 pe-7 pb-8 rounded border-4 border-accent"><div class="flex flex-row items-center justify-between align-middle mt-2 bg-background mb-5"><div class="text-xl align-middle inline-block mb-0 pb-0 select-none" data-svelte-h="svelte-s9jupw"><span class="text-primary">::</span> BASE64 <span class="text-primary">//</span> Encoder <span class="text-primary">/</span>
+			Decoder</div> <div class="inline-block align-text-top"> <button type="button" tabindex="0" class="ring-offset-background focus-visible:ring-ring inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border-input bg-background hover:bg-accent hover:text-accent-foreground border h-10 w-10 align-middle" data-button-root=""><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon lucide lucide-sun h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon lucide lucide-moon absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg> <span class="sr-only" data-svelte-h="svelte-ntgole">Toggle theme</span></button></div></div> <div class="mb-8"><textarea class="border-input ring-offset-background placeholder:text-muted-foreground flex min-h-[80px] w-full rounded-md border px-3 py-2 disabled:cursor-not-allowed disabled:opacity-50 bg-background mb-3 border-none text-lg ring-primary ring-2 ring-offset-2 focus-visible:ring-2 focus-visible:ring-primary outline-none focus:outline-none focus-visible:outline-none" placeholder="Вставьте закодированный текст или текст для кодирования." autofocus rows="5"></textarea></div> <div class="text-end mb-5"> <div style="text-align: right"> <button type="button" tabindex="0" class="ring-offset-background focus-visible:ring-ring inline-flex items-center justify-center whitespace-nowrap font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-11 rounded-md px-8 text-lg text" title="Скопировать в буфер обмена" disabled data-button-root=""><a class="block w-100 h-100"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 inline-block mb-0.5"><path stroke-linecap="round" stroke-linejoin="round" d="M15.666 3.888A2.25 2.25 0 0013.5 2.25h-3c-1.03 0-1.9.693-2.166 1.638m7.332 0c.055.194.084.4.084.612v0a.75.75 0 01-.75.75H9a.75.75 0 01-.75-.75v0c0-.212.03-.418.084-.612m7.332 0c.646.049 1.288.11 1.927.184 1.1.128 1.907 1.077 1.907 2.185V19.5a2.25 2.25 0 01-2.25 2.25H6.75A2.25 2.25 0 014.5 19.5V6.257c0-1.108.806-2.057 1.907-2.185a48.208 48.208 0 011.927-.184"></path></svg></a></button>  <button type="button" tabindex="0" class="ring-offset-background focus-visible:ring-ring inline-flex items-center justify-center whitespace-nowrap font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-11 rounded-md px-8 text-lg" disabled data-button-root="">Кодировать</button>  <button type="button" tabindex="0" class="ring-offset-background focus-visible:ring-ring inline-flex items-center justify-center whitespace-nowrap font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-11 rounded-md px-8 text-lg" disabled data-button-root="">Декодировать</button></div></div> <div class="w-100 text-center text-primary select-none" data-svelte-h="svelte-1lsizwb">v2.0.0</div></div> 
+			
 			<script>
 				{
-					__sveltekit_1h4b13o = {
+					__sveltekit_mtm2lb = {
 						base: new URL(".", location).pathname.slice(0, -1)
 					};
 
 					const element = document.currentScript.parentElement;
 
+					const data = [null,null];
+
 					Promise.all([
-						import("./_app/immutable/entry/start.G4chMpae.js"),
-						import("./_app/immutable/entry/app.E55aphjY.js")
+						import("./_app/immutable/entry/start.4zbJ2YcV.js"),
+						import("./_app/immutable/entry/app.oXq-woWP.js")
 					]).then(([kit, app]) => {
-						kit.start(app, element);
+						kit.start(app, element, {
+							node_ids: [0, 2],
+							data,
+							form: null,
+							error: null
+						});
 					});
 				}
 			</script>
